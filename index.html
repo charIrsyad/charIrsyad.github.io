@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title id="tu">Clock</title>
+  <style>
+    .uni {
+      font-size:100px;
+      color: rgb(199,231,255);
+}
+
+.unihex {
+      font-size:50px;
+      color: rgb(199,231,255);
+}
+
+.unibin {
+      font-size:30px;
+      color: rgb(199,231,255);
+}
+    
+    body {
+     background: rgb(0,0,255);
+     background: linear-gradient(90deg, rgba(0,0,255,1) 0%, rgba(56,170,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+  </style>
+</head>
+<body onload="startTime()">
+
+
+<iframe src="https://free.timeanddate.com/clock/i8q0vlor/n122/fn12/fs20/fcc7e7ff/tc55f/bls2/brs2/bts2/bbs3/tt0/td1/th1/tb4" frameborder="0" width="355" height="46"></iframe>
+
+<h3>Seconds Since My Bday</h3>
+<h3>Decimal</h3>
+<div class="unix">
+<div id="un" class="uni"></div>
+
+<h3>Hexadecimal</h3>
+<div class="unixhex">
+<div id="unh" class="unihex"></div>
+
+<h3>Binary</h3>
+<div class="unixbin">
+<div id="unb" class="unibin"></div>
+
+<script>
+function startTime() {
+  
+  var unix = Date.now() - 430;
+  var bday = Math.round(unix/ 1000) - 1259717760;
+
+  document.getElementById('tu').innerHTML = bday;
+
+  document.getElementById('un').innerHTML = bday;
+  document.getElementById('unh').innerHTML = bday.toString(16);
+  document.getElementById('unb').innerHTML = bday.toString(2);
+
+  setTimeout(startTime, 1);
+}
+</script>
+
+</body>
+</html>
