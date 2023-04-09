@@ -42,11 +42,12 @@
 <h3>Binary</h3>
 <div class="unixbin">
 <div id="unb" class="unibin"></div>
-
+  
+<script src="https://use.ntpjs.org/ntp.js" async defer></script>
 <script>
 function startTime() {
   
-  var unix = Date.now() - 330;
+  var unix = Date.now() - 1000;
   var bday = Math.round(unix/ 1000) - 1259717760;
 
   document.getElementById('tu').innerHTML = bday;
