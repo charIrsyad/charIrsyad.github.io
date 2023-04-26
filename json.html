@@ -3,16 +3,18 @@
 
 <body onload="startTime()">
 
-
+<div>{ "</div>
+<div>irmtime</div>
+<div>"</div>
 <div id="un"></div>
   
 <script src="https://use.ntpjs.org/ntp.js" async defer></script>
 <script>
 function startTime() {
   
-  var unix = Date.now() - 1000;
+  var unix = Date.now() - 1200;
   var bday = Math.round(unix/ 1000) - 1259717760;
-  document.getElementById('un').innerHTML = "{ irmtime:" + bday + "}";
+  document.getElementById('un').innerHTML = ":" + bday + "}";
 }
   
 </script>
