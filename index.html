@@ -28,11 +28,11 @@
 <script>
 function startTime() {
   
-  var unix = Date.now()/1000;
-  var bday = unix - 1259717760.00000000;
+  var unix = Date.now();
+  var bday = unix - 1259717760000; //x1000
 
-  document.getElementById('tu').innerHTML = bday;
-  document.getElementById('un').innerHTML = bday;
+  document.getElementById('tu').innerHTML = bday/1000;
+  document.getElementById('un').innerHTML = bday/1000;
   setTimeout(startTime, 0.1);
 }
 </script>
