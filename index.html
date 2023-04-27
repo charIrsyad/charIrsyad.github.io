@@ -25,16 +25,15 @@
 <div class="unix">
 <div id="un" class="uni"></div>
   
-<script src="https://use.ntpjs.org/ntp.js" async defer></script>
 <script>
 function startTime() {
   
-  var unix = Date.now() - 400;
-  var bday = (unix / 1000) - 1259717760;
+  var unix = Date.now()/1000;
+  var bday = unix - 1259717760.00000000;
 
   document.getElementById('tu').innerHTML = bday;
   document.getElementById('un').innerHTML = bday;
-  setTimeout(startTime, 1);
+  setTimeout(startTime, 0.1);
 }
 </script>
 
