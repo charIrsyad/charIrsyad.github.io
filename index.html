@@ -28,9 +28,17 @@ function startTime() {
   var unix = Date.now();
   var bday = unix - 1259717760000; //x1000
 
-  document.getElementById('tu').innerHTML = bday/1000;
   document.getElementById('un').innerHTML = bday/1000;
+  refreshTime();
+  setTimeout(refreshTime, 1000);
   setTimeout(startTime, 0.1);
+}
+  
+function refreshTime() {
+  var unix = Date.now();
+  var bday = unix - 1259717760000; //x1000
+
+  document.getElementById('tu').innerHTML = Math.floor(bday/1000);
 }
 </script>
 
