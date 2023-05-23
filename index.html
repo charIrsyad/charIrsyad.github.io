@@ -18,7 +18,7 @@
     }
   </style>
 </head>
-<body onload="startTime()">
+<body onload="startTime(); getTime()">
 
 <h3>Seconds Since My Birthday</h3>
 
@@ -26,9 +26,10 @@
 <div id="un" class="uni"></div>
   
 <script>
+var diffrence = 0;
 function startTime() {
   
-  var unix = Date.now();
+  var unix = Date.now() - diffrence;
   var bday = unix - 1259717760000; //x1000
 
   document.getElementById('un').innerHTML = bday/1000;
@@ -38,10 +39,26 @@ function startTime() {
 }
   
 function refreshTime() {
-  var unix = Date.now();
+  var unix = Date.now() - diffrence;
   var bday = unix - 1259717760000; //x1000
 
   document.getElementById('tu').innerHTML = Math.floor(bday/1000);
+}
+  
+async function getTime(){
+	var url = "http://worldtimeapi.org/api/timezone/GMT";
+    fetch(url) 
+    .then((response) => response.json()) 
+    .then((user) => {
+    	var dt = user.datetime; 
+    	var px = Date.now();
+    	console.log(dt);
+    	diffrence = diffTime(px, new Date(dt).getTime())
+    });
+}
+  
+function diffTime(a, b){
+    return new Date(a).getTime() - new Date(b);
 }
 </script>
 
