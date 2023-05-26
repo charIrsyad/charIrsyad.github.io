@@ -4,8 +4,6 @@
 <head>
   <title id="tu">Clock</title>
   
-   <link rel = "icon" href = "logo.png" type = "image/x-icon">
-  
   <style>
     .uni {
       font-size:90px;
@@ -44,15 +42,16 @@
     .then((response) => response.json()) 
     .then((user) => {
     	var dt = user.datetime; 
+      var ntp = new Date(dt).getTime();
     	var px = Date.now();
-    	//console.log(dt);
-    	diffrence = diffTime(px, new Date(dt).getTime()*1000)
+    	console.log(dt);
+    	diffrence = diffTime(px, new Date(dt).getTime());
     });
   }
   
   function diffTime(a, b){
-    return new Date(a).getTime() - new Date(b).getTime();
-  }
+    return new Date(a).getTime() - new Date(b);
+}
 </script>
 
 </body>
