@@ -25,15 +25,14 @@
   
 <script>
   var diffrence = 0;
-  var leap_seconds = 3; //leap seconds since birthday
   function startTime() {
   
   var unix = Date.now() - diffrence; //accuracy and precision
   var bday = unix - 1259717760000; //x1000 
 	  //congrats finding my birthday^
 
-  document.getElementById('un').innerHTML = (bday/1000) - leap_seconds;
-  document.getElementById('tu').innerHTML = Math.floor(bday/1000) - leap_seconds;
+  document.getElementById('un').innerHTML = (bday/1000);
+  document.getElementById('tu').innerHTML = Math.floor(bday/1000);
   
   setTimeout(startTime, 0.1);
   }
