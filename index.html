@@ -33,7 +33,7 @@
 	  //congrats finding my birthday^
 
   document.getElementById('un').innerHTML = bday/1000;
-  document.getElementById('tu').innerHTML = Math.floor(bday/1000);
+  document.getElementById('tu').innerHTML = Math.floor(bday/1000) - leap_seconds;
   
   setTimeout(startTime, 0.1);
   }
