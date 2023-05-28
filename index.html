@@ -32,7 +32,7 @@
   var bday = unix - 1259717760000; //x1000 
 	  //congrats finding my birthday^
 
-  document.getElementById('un').innerHTML = bday/1000;
+  document.getElementById('un').innerHTML = (bday/1000) - leap_seconds;
   document.getElementById('tu').innerHTML = Math.floor(bday/1000) - leap_seconds;
   
   setTimeout(startTime, 0.1);
