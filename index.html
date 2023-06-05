@@ -42,7 +42,7 @@
     fetch(url) 
     .then((response) => response.json()) 
     .then((user) => {
-    	var dt = user.datetime; 
+    	var dt = user.utc_datetime; 
       var ntp = new Date(dt).getTime();
     	var px = Date.now();
     	console.log(dt);
